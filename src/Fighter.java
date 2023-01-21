@@ -1,4 +1,5 @@
 public class Fighter {
+    private int id;
     private String name;
     private Weight weight;
     private int age;
@@ -9,6 +10,18 @@ public class Fighter {
     private boolean isChampion;
 
     public Fighter(String name, Weight weight, int age, int height, int reach, Stance stance, Style style, boolean isChampion) {
+        this.name = name;
+        this.weight = weight;
+        this.age = age;
+        this.height = height;
+        this.reach = reach;
+        this.stance = stance;
+        this.style = style;
+        this.isChampion = isChampion;
+    }
+
+    public Fighter(int id, String name, Weight weight, int age, int height, int reach, Stance stance, Style style, boolean isChampion) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
         this.age = age;
@@ -86,7 +99,8 @@ public class Fighter {
     @Override
     public String toString() {
         return "Fighter{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", weight=" + weight +
                 ", age=" + age +
                 ", height=" + height +
@@ -96,4 +110,10 @@ public class Fighter {
                 ", isChampion=" + isChampion +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+
 }

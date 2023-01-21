@@ -1,19 +1,43 @@
+import java.io.FileNotFoundException;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-/*        WritertoFile writertoFile = new WritertoFile();
-      Fighter fighter1 =
-              new Fighter("Jon Jones",Weight.LIGHTWEIGHT,
-                      35,193,215,Stance.AMBIDEXTROUS,Style.WRESTLING,true);
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose function");
+        String function = scanner.nextLine();
 
-      Fighter fighter2 = new Fighter("Anderson Silva", Weight.MIDDLEWEIGHT,
-              47,188,197,Stance.LEFT_HANDED,Style.MUAY_THAI,true);
+        switch (function.toLowerCase()){
+            case "create" :
+                System.out.println("Create");
+                CreateFighter.createFighter();
+                break;
 
-      FighterPars fighterPars = new FighterPars();
-      writertoFile.writerToFile(fighterPars.ParsObjectToString(fighter1));*/
-        ReedFile reedFile = new ReedFile();
-        for (Fighter fighter : reedFile.readObjectFromFile()) {
-            System.out.println(fighter);
+            case "read" :
+                System.out.println("Read");
+                ReadFigther.readFigther();
+                break;
+
+            case "delete" :
+                System.out.println("Delete");
+                DeleteFighters.deleteFighters();
+                break;
+
+            case "update" :
+                UpdateFighters.updateFighters();
+                        break;
+
+            case "backupTo" :
+                BackupTo.backupTo();
+
+            case "backup":
+                Backup.backup();
         }
+
+
+
+
 
 
     }
